@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person Object</title>
+</head>
+<body>
+    <script>
+        var person = {
+            name: "abc",
+            age: 46,
+            greet: function() {
+                console.log("Hello " + this.name + " welcome to the FSD Lab.");
+            }
+        };
+
+        const snapshot = Object.assign({}, person);
+
+        console.log("Before adding isAdult: ", snapshot);
+
+        Object.defineProperty(person, 'isAdult', {
+            get: () => {
+                return person.age >= 18;
+            }
+        });
+        console.log('After adding isAdult property: ', person);
+
+        console.log("Is the person an adult? " + person.isAdult);
+        person.greet();
+    </script>
+</body>
+</html>

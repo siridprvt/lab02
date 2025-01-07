@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //VAR
+
+var a=10;
+var name="abc";
+var value=false;
+console.log('a : ',a);
+
+//Hoisting
+console.log('var1: ',var1); //undefined
+var var1=5;
+
+//ReInitialization
+a=20;
+console.log('a after reinitialize : ',a);
+
+//function scope or global scope
+function func(){
+    console.log('a inside func : ', a);
+
+    var varScope="siri";
+    console.log('var scope inside function: ', varScope);
+}
+func();
+// console.log('var scope outside function:',varScope) Uncaught ReferenceError: varScope is not defined
+
+
+//LET
+
+let b=20;
+let loc="hyd";
+let bool=true;
+console.log('location: ',loc);
+
+//Hoisting
+// console.log(var2); Uncaught ReferenceError: Cannot access 'var2' before initialization
+let var2=5;
+
+//ReInitialization
+loc="mumbai"
+console.log('location after reinitialize: ',loc);
+
+//Block scope
+{
+    let letScope=false;
+    console.log('let scope inside block : ',letScope);
+}
+// console.log('let scope outside block : ',letScope); Uncaught ReferenceError: letScope is not defined
+
+//CONST
+
+const c=30;
+// const fname;
+console.log(c);
+
+//ReInitialization
+// c=40; Uncaught TypeError: Assignment to constant variable.
+
+// console.log(var3); Uncaught ReferenceError: Cannot access 'var3' before initialization
+const var3=45;
+
+//Block scope
+{
+    let constScope="scope1";
+    console.log('const scope inside block : ',constScope);
+}
+// console.log('const scope outside block : ',constScope); Uncaught ReferenceError: constScope is not defined
+    </script>
+</body>
+</html>
